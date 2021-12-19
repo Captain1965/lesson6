@@ -21,11 +21,10 @@ class Train
   attr_accessor :number, :route, :wagons, :wagon, :trains
   attr_reader :curent_speed, :curent_station_index
 
-  def self.find(number_trains)
-      @@trains.each_with_index do |item|
-       item.number == number_trains ? (return trains[index]) : (return nill)
-     end
+  def self.find(train_number)
+    @@trains.find {|train| train.number == train_number}
   end 
+    
 
   def initialize(number)
     @@trains = []
